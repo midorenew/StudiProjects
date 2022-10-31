@@ -21,9 +21,7 @@ if (login_check($mysqli) == true) {
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Partenariat Service</title>
     
-
     <!-- Bootstrap core CSS -->
     <link href="boot/css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,9 +31,9 @@ if (login_check($mysqli) == true) {
     <link href="boot/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="boot/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
     
-      
+    <?php
+    include "header.php"?>
     
-   
   </head>
 
   <body>
@@ -155,7 +153,7 @@ if (login_check($mysqli) == true) {
       <hr>
 
       <footer>
-        <p>&copy; Projectworlds.in </p>
+        <p>&copy; N.FAKIH </p>
       </footer>
     </div> <!-- /container -->
 
@@ -164,15 +162,15 @@ if (login_check($mysqli) == true) {
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/JavaScript" src="boot/js/sha512.js"></script> 
-        <script type="text/JavaScript" src="boot/js/forms.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/JavaScript" src="boot/js/forms.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="boot/js/bootstrap.min.js"></script>
-    <SCRIPT TYPE="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></SCRIPT>
+    <script TYPE="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
- <SCRIPT src="boot/js/dialog.js" type="text/javascript"></SCRIPT>
- <script src="boot/js/jquery.bxslider.min.js"></script>
-  <script type="text/javascript" src="boot/js/slide.js"></script>
-  <script src="boot/js/plugins/jquery.fitvids.js"></script>
+    <script src="boot/js/dialog.js" type="text/javascript"></script>
+    <script src="boot/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="boot/js/slide.js"></script>
+    <script src="boot/js/plugins/jquery.fitvids.js"></script>
 
 
   </body>
