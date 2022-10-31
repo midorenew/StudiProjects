@@ -31,85 +31,26 @@ if (login_check($mysqli) == true) {
     <link href="boot/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="boot/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
     
+    <!-- Custom title in header.php -->
     <?php
-    include "header.php"?>
-    
+      include "header.php"
+    ?>
   </head>
 
   <body>
-
- <?php
+    <?php
         if (isset($_GET['error'])) {
             echo '<p class="error"></p>';
         }
         if(isset($_GET['reg'])) {
           echo '<p class="reg"></p>';
         }
-        ?> 
+    ?> 
 
+  <?php
+    include "navbar.php"
+  ?>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">A Propos</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active" id="a">
-            <a href="#">Accueil</a></li>
-               <?php if (!isset($_SESSION['username'])){echo'<li><a href="packages.php">Package</a></li>
-              <li><a href="facilities.php">Facilities</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            ';
-            }
-            ?>
-           <?php
-            if(isset($_SESSION['username'])) {
-              echo '<li><a href="./profile/i.php">Profile</a></li>
-              <li><a href="./workouts">Workouts</a></li></li>';
-              if(isset($_SESSION['admin'])) {
-                echo '<li><a href="att.php">Attendance</a></li>';
-              }
-            }
-        
-            ?>
-         <?php if(isset($_SESSION['admin'])) { ?>
-              <li><a href="../admin/a.php">Admin Panel</a></li>
-              <?php } ?>
-            </ul>
-    <?php
-    if(isset($_SESSION['username']))
- {
- echo '<form class="navbar-form navbar-right" role="form" action="include/logout.php">
-           
-             
-           
-            <input type="submit" class="btn btn-success" value="Sign-out">';
-}
- else echo '
-        
-          <form class="navbar-form navbar-right" role="form" method="post" action="include/process_login.php">
-           <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control" name="email">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control" name="password">
-            </div>
-            <input type="submit" class="btn btn-success" value="Sign in" onclick="formhash(this.form, this.form.password);">
-          
-          </form>'
-           ?>
-
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
