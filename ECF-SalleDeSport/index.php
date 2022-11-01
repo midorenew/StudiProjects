@@ -1,4 +1,3 @@
-
 <?php
 include_once 'include/db_connect.php';
 include_once 'include/functions.php';
@@ -88,14 +87,9 @@ if (login_check($mysqli) == true) {
         </div>
       </div>
 
- 
- 
- 
-      <hr>
-
-      <footer>
-        <p>&copy; N.FAKIH </p>
-      </footer>
+      <?php
+        include 'footer.php'
+      ?>
     </div> <!-- /container -->
 
 
