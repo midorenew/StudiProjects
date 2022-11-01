@@ -37,3 +37,10 @@ height: auto;
 margin-bottom: 15px;
 padding: 7px 9px;
 }
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}

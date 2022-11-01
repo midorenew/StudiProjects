@@ -41,70 +41,13 @@
         }
     ?> 
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">About Fitness</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li ><a href="index.php">Home</a></li>
-            
-           <li class="active" id="a"> <a href="packages.php">Package</a></li>
-            <li><a href="facilities.php">Facilities</a></li>
-           
-             <li><a href="about.php">About</a></li>
-              
-            <li><a href="contact.php">Contact</a></li>
-            <?php
-            if(isset($_SESSION['username'])) {
-              echo '<li><a href="./profile/">Profile</a>
-              <li><a href="./workouts">Workouts</a>';
-              if(isset($_SESSION['admin'])) {
-                echo '<li><a href="att.php">Attendance</a>';
-              }
-            }
-            ?>
-          </ul>
-        
-        
-   <?php
-    if(isset($_SESSION['username']))
- {
- echo '<form class="navbar-form navbar-right" role="form" action="include/logout.php">
-           
-             
-           
-            <input type="submit" class="btn btn-success" value="Sign-out">';
-}
- else echo '
-        
-          <form class="navbar-form navbar-right" role="form" method="post" action="include/process_login.php">
-           <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control" name="email">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control" name="password">
-            </div>
-            <input type="submit" class="btn btn-success" value="Sign in" onclick="formhash(this.form, this.form.password);">
-            
-          </form>
-          '; ?>
+  <?php
+    include "navbar.php" ;
+  ?>
 
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-   </div>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-    <table> <tr>
+    <table class="table"> <tr>
                 <td align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td align="right" valign="top"><table width="98%" border="0" cellspacing="0" cellpadding="0">
@@ -112,7 +55,8 @@
                       <tr>
                         <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td align="left" valign="top" class="gray12_txt"><table width="100%" border="0" cellpadding="1" cellspacing="1">
+                            <td align="left" valign="top" class="gray12_txt">
+                              <table width="100%" border="0" cellpadding="1" cellspacing="1">
                               <tr>
                                 <td colspan="4" align="left" valign="top"><p><strong>About Fitness - Packages</strong></p></td>
                                 </tr>
@@ -148,7 +92,7 @@
                                 </tr>
                               </table></td>
                             </tr>
-                          </table
+      </table>
      
        <p><h5><b>About Fitness</b> is having highly qualified team of trainers, they are widely acknowledged as being among the industry's finest and take enormous pride in assisting members wherever they are needed. All are fully accredited on the Exercise Professionals Register and are, of course, insured to deliver some of the most advanced training. They can focus clearly on your goals and pointedly be on hand to ensure you reach them.</h5><br> <h3>Note:</h3>
 » 	All Rates are in Indian Rs.<br>
@@ -158,19 +102,9 @@
    
     </div>
 
-
- <div class="container">
-      <!-- Example row of columns -->
-  
-      </div>
-
-
-      <hr>
-
-      <footer>
-        <p>&copy; Projectworlds.in</p>
-      </footer>
-    </div> <!-- /container -->
+    <?php
+      include 'footer.php'
+    ?>
 
 
     <!-- Bootstrap core JavaScript

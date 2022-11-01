@@ -8,35 +8,45 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">A Propos</a>
+            <!-- <a class="navbar-brand" href="#">A Propos</a> -->
         </div>
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active" id="a">
-                    <a href="#">Accueil</a>
+                    <a href="index.php">Accueil</a>
                 </li>
                
-               <?php if (!isset($_SESSION['username'])) {
-                echo   '<li><a href="packages.php">Partenaires</a></li>
-                        <li><a href="facilities.php">Modules</a></li>
-                        <li><a href="about.php">A propos</a></li>
-                        <li><a href="contact.php">Nous contacter</a></li>';
+               <?php
+                    if (!isset($_SESSION['username'])) {
+                        // menu options
+                        echo
+                        '<li>
+                            <a href="partner.php">Part</a>
+                        </li>
+                        <li>
+                            <a href="facilities.php">Modules</a>
+                        </li>
+                        <li>
+                            <a href="about.php">A propos</a>
+                        </li>
+                        <li>
+                            <a href="contact.php">Nous contacter</a>
+                        </li>';
                     }
-                ?>
-                
-                <?php if(isset($_SESSION['username']))  {
-                echo    '<li><a href="./profile/i.php">Profile</a></li>
+                    else
+                    {
+                        echo    '<li><a href="./profile/i.php">Profile</a></li>
                         <li><a href="./workouts">Workouts</a></li></li>';
                 
                         if(isset($_SESSION['admin'])) {
-                    echo    '<li><a href="att.php">Attendance</a></li>';
-                        }
-                }
+                        echo    '<li><a href="att.php">Attendance</a></li>';
+                        }        
+                    }
                 ?>
 
                 <?php if(isset($_SESSION['admin'])) { ?>
-                <li><a href="../admin/a.php">Admin Panel</a></li>
+                    <li><a href="../admin/a.php">Admin Panel</a></li>
                 <?php } ?>
             </ul>
 
@@ -51,9 +61,9 @@
                         <input type="text" placeholder="Email" class="form-control" name="email">
                       </div>
                       <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control" name="password">
+                        <input type="password" placeholder="Mot de passe" class="form-control" name="password">
                       </div>
-                      <input type="submit" class="btn btn-success" value="Sign in" onclick="formhash(this.form, this.form.password);">
+                      <input type="submit" class="btn btn-success" value="Connexion" onclick="formhash(this.form, this.form.password);">
                     </form>';
              }
            ?>
