@@ -1,6 +1,11 @@
 <?php
 include_once 'psl-config.php';
- 
+
+// ----------------------------------------------------------------
+// Secure session start
+// no parameters required
+// N.FAKIH 31/10/2022
+// ----------------------------------------------------------------
 function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
     $secure = SECURE;
@@ -23,6 +28,13 @@ function sec_session_start() {
     session_start();            // Start the PHP session 
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
+
+// ----------------------------------------------------------------
+// Login function
+// $email       : user's email address
+// $password    : user's password
+// $mysqli      : MySQL database connection
+// ----------------------------------------------------------------
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt, admin 
@@ -85,6 +97,12 @@ function login($email, $password, $mysqli) {
         }
     }
 }
+
+// ----------------------------------------------------------------
+// checkbrute function
+// $user_id     : user's Id
+// $mysqli      : MySQL database connection
+// ----------------------------------------------------------------
 function checkbrute($user_id, $mysqli) {
     // Get timestamp of current time 
     $now = time();
@@ -110,6 +128,8 @@ function checkbrute($user_id, $mysqli) {
         }
     }
 }
+
+
 function login_check($mysqli) {
     // Check if all session variables are set 
     if (isset($_SESSION['user_id'], 
@@ -157,6 +177,7 @@ function login_check($mysqli) {
         return false;
     }
 }
+
 function esc_url($url) {
  
     if ('' == $url) {
