@@ -1,7 +1,12 @@
+<!-- STUDI Project        -->
+<!-- ECF : Salle de Sport -->
+<!-- N.FAKIH              -->
+<!-- 31/10/2022           -->
 <?php
-include_once 'include/db_connect.php';
+include_once 'include/db_connect.php';  // define $mysqli connector to MySQL database
 include_once 'include/functions.php';
- 
+
+// Start a secure session
 sec_session_start();
  
 if (login_check($mysqli) == true) {
@@ -46,34 +51,27 @@ if (login_check($mysqli) == true) {
         }
     ?> 
 
-  <?php
-    include "navbar.php"
-  ?>
+    <?php
+      include "navbar.php"
+    ?>
 
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <!-- Main jumbotron for a primary marketing message or call to action
     <div class="jumbotron">
-  
-      <!--too add vids
-          <li>
-    <iframe src="http://player.vimeo.com/video/17914974" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-  </li>
-       -->
        <ul class="bxslider">
-  <li><img src="img/1.jpg" /></li>
-  <li><img src="img/2.jpg" /></li>
-  <li><img src="img/3.jpg" /></li>
-  <li><img src="img/4.jpg" /></li>
-  <li><img src="img/5.jpg" /></li>
-  <li><img src="img/6.jpg" /></li>
-  <li><img src="img/7.jpg" /></li>
-  <li><img src="img/8.jpg" /></li>
-</ul>
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
      </div>
+      -->
 
     <div class="container">
-
-      
       <div class="row">
        
         <div class="col-md-4" id="a2">
@@ -96,17 +94,15 @@ if (login_check($mysqli) == true) {
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/JavaScript" src="boot/js/sha512.js"></script> 
-    <script type="text/JavaScript" src="boot/js/forms.js"></script>
+    <script src="boot/js/sha512.js" type="text/JavaScript"></script> 
+    <script src="boot/js/forms.js" type="text/JavaScript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="boot/js/bootstrap.min.js"></script>
-    <script TYPE="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="boot/js/bootstrap.min.js" type="text/JavaScript"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
     <script src="boot/js/dialog.js" type="text/javascript"></script>
-    <script src="boot/js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="boot/js/slide.js"></script>
+    <script src="boot/js/jquery.bxslider.min.js" type="text/javascript"></script>
+    <script src="boot/js/slide.js" type="text/javascript"></script>
     <script src="boot/js/plugins/jquery.fitvids.js"></script>
-
-
   </body>
 </html>

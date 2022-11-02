@@ -19,13 +19,13 @@
                
                <?php
                     if (!isset($_SESSION['username'])) {
-                        // menu options
+                        // menu options if no one is connected
                         echo
                         '<li>
-                            <a href="partner.php">Part</a>
+                            <a href="partners.php">Part</a>
                         </li>
                         <li>
-                            <a href="facilities.php">Modules</a>
+                            <a href="modules.php">Modules</a>
                         </li>
                         <li>
                             <a href="about.php">A propos</a>
@@ -35,10 +35,12 @@
                         </li>';
                     }
                     else
+                        // someone is connected
                     {
                         echo    '<li><a href="./profile/i.php">Profile</a></li>
                         <li><a href="./workouts">Workouts</a></li></li>';
-                
+                        
+                        // The admin is connected
                         if(isset($_SESSION['admin'])) {
                         echo    '<li><a href="att.php">Attendance</a></li>';
                         }        
@@ -46,16 +48,18 @@
                 ?>
 
                 <?php if(isset($_SESSION['admin'])) { ?>
-                    <li><a href="../admin/a.php">Admin Panel</a></li>
+                    <li><a href="../admin/a.php">Admin</a></li>
                 <?php } ?>
             </ul>
 
             <?php
-             if(isset($_SESSION['username'])) {
+             if(isset($_SESSION['username']))
+                {
                 echo '<form class="navbar-form navbar-right" role="form" action="include/logout.php">
-                      <input type="submit" class="btn btn-success" value="Sign-out">';
+                      <input type="submit" class="btn btn-success" value="Déconnexion">';
                 }
-             else {
+             else
+                {
                 echo '<form class="navbar-form navbar-right" role="form" method="post" action="include/process_login.php">
                       <div class="form-group">
                         <input type="text" placeholder="Email" class="form-control" name="email">
@@ -64,8 +68,8 @@
                         <input type="password" placeholder="Mot de passe" class="form-control" name="password">
                       </div>
                       <input type="submit" class="btn btn-success" value="Connexion" onclick="formhash(this.form, this.form.password);">
-                    </form>';
-             }
+                      </form>';
+                }
            ?>
 
         </div><!--/.navbar-collapse -->
