@@ -7,7 +7,7 @@ include_once 'include/db_connect.php';  // define $mysqli connector to MySQL dat
 include_once 'include/functions.php';
 
 // Start a secure session
-sec_session_start();
+//sec_session_start();
  
 if (login_check($mysqli) == true) {
     $logged = 'in';
@@ -49,9 +49,7 @@ if (login_check($mysqli) == true) {
         if(isset($_GET['reg'])) {
           echo '<p class="reg"></p>';
         }
-    ?> 
-
-    <?php
+        
       include "navbar.php"
     ?>
 

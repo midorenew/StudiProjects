@@ -36,14 +36,11 @@
 
   <body>
     <?php
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
+      if (isset($_GET['error'])) {
+          echo '<p class="error">Error Logging In!</p>';
         }
-    ?> 
-
-  <?php
-    include "navbar.php" ;
-  ?>
+      include "navbar.php" ;
+    ?>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">

@@ -6,7 +6,8 @@ include_once 'psl-config.php';
 // no parameters required
 // N.FAKIH 31/10/2022
 // ----------------------------------------------------------------
-function sec_session_start() {
+function sec_session_start()
+{
     $session_name = 'sec_session_id';   // Set a custom session name
     $secure = SECURE;
     // This stops JavaScript being able to access the session id.
